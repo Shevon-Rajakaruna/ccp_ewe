@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Modulereport1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ecc5784c-c338-4d3b-a7c7-b830b21d1d9a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select modules.*,departments.desp as dep, timetable.module, timetable.category, personal_info.full_name from timetable, modules, personal_info, departments where modules.id = timetable.module and timetable.userid = personal_info.userid and modules.department = departments.id]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mod_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mod_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="department" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="year" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="semester" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lec_hours" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tute_hours" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lab_hours" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="max_lec" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dep" class="java.lang.String"/>
+	<field name="module" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="category" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="full_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="414" y="55" width="43" height="20" uuid="1412a480-ee69-4ce1-98cc-e76445422e36"/>
+				<text><![CDATA[Printed:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="5" width="173" height="33" forecolor="#000066" uuid="5f4ed2f2-d9d6-47c1-b109-b32c7456eb95"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CCP UNIVERSITY]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="453" y="54" width="99" height="22" uuid="e09314db-fba8-4774-9fac-a5a348b76a3d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="5" y="5" width="61" height="54" uuid="a5aab39a-f007-4ef6-9db5-0307cff74928"/>
+				<imageExpression><![CDATA["/../../../reports/pics/logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="153" splitType="Stretch">
+			<rectangle>
+				<reportElement x="5" y="33" width="283" height="115" uuid="7e3b2c9e-4460-4812-b551-c88cade15711"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="9" y="81" width="80" height="20" uuid="91d285ba-7cc7-44a8-a4e7-cd8c34be925e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="41" width="80" height="20" uuid="97be1378-efff-4665-8fe1-ce187408ea59"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Module Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="61" width="94" height="20" uuid="d63bf041-cc1e-42a0-aa40-813ac9e17ed5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Module Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="121" width="80" height="20" uuid="5e4b491b-5e69-48bc-b56f-75a74103d9ee"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Semester]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="101" width="80" height="20" uuid="fd51d7f7-00be-4e59-a231-643c5c6928f5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="41" width="14" height="20" uuid="c9095664-74bd-4dbf-82ec-d83e57a5b833"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="61" width="14" height="20" uuid="74ecd923-2d8e-4589-bd67-c3ab5198fd55"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="81" width="14" height="20" uuid="ae7318a4-0f16-413a-bd2f-0b3a3904fb0c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="101" width="14" height="20" uuid="d8765e11-2e82-431a-9cc0-56dad1dc264e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="121" width="14" height="20" uuid="f44bb4ee-5a76-4fc9-9d01-c412a314dbb9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="103" y="41" width="100" height="20" isRemoveLineWhenBlank="true" uuid="85b7ef25-821b-4709-9e2f-043bedb2fcd7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mod_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="61" width="182" height="20" isRemoveLineWhenBlank="true" uuid="7bccf96f-667c-42b2-8e8e-bc46edd3aff2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mod_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="81" width="182" height="20" isRemoveLineWhenBlank="true" uuid="3a927b6d-9b7f-4742-805a-56262139f22f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="101" width="100" height="20" isRemoveLineWhenBlank="true" uuid="ef53f452-3342-4146-bf31-f071f8eac2f9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="121" width="100" height="20" isRemoveLineWhenBlank="true" uuid="ba0b75fb-b817-4ff9-acb7-4b6c88d8a94f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semester}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="303" y="33" width="248" height="115" uuid="cb6609a0-521a-4466-81c3-bf02c05b10d5"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="315" y="44" width="99" height="20" uuid="4799d5fd-09b7-4566-aed2-defd220ebc4f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lecture Hours]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="104" width="105" height="20" uuid="0e445ba8-c5d1-4376-a227-1b5fbe5bd1f6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Labaratory Hours]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="73" width="99" height="20" uuid="fbeef9af-c8fb-432c-9fc5-e23a24d6a351"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tutorial Hours]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="104" width="14" height="20" uuid="e529628a-9172-4fc5-97b4-6c4de2e0b942"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="73" width="14" height="20" uuid="bf6b3dc9-28d7-440e-bdba-68e63d7efb8d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="44" width="14" height="20" uuid="d5c5da16-e8bf-4ae4-b7fb-90744754c909"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="44" width="100" height="20" isRemoveLineWhenBlank="true" uuid="20887b0f-d17a-4f4f-9e06-16e77be62868"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lec_hours}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="73" width="100" height="20" isRemoveLineWhenBlank="true" uuid="2ab8ff72-ad0b-48df-a67d-12d700978c7c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tute_hours}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="104" width="100" height="20" isRemoveLineWhenBlank="true" uuid="74aece65-781f-4377-af35-705b1ed2fad2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lab_hours}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="3" width="138" height="22" forecolor="#284867" uuid="f2b67b03-2613-44e2-bbc6-7f964092dea5"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modules Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="7" width="100" height="20" uuid="edc210c3-a4d1-4336-8a40-82cdc51e4c15"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="7" width="119" height="20" uuid="0d46a98d-4bac-4e9f-ad20-d463e74e22b3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lecturer in Charge]]></text>
+			</staticText>
+			<line>
+				<reportElement x="19" y="29" width="511" height="1" uuid="ee33f668-abbc-4c52-9be6-5b0bd53df117"/>
+			</line>
+			<line>
+				<reportElement x="19" y="4" width="511" height="1" uuid="033f27cb-b81b-447a-8303-b25079942fbe"/>
+			</line>
+			<line>
+				<reportElement x="19" y="4" width="1" height="30" uuid="3f352c6d-e0e3-4564-af50-a15bfba6af44"/>
+			</line>
+			<line>
+				<reportElement x="530" y="4" width="1" height="30" uuid="4de25207-899a-4958-a5e2-921af838fbdd"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="4" width="135" height="20" isRemoveLineWhenBlank="true" uuid="a70a69aa-2ad2-44ef-8134-c8d0c14078a7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="4" width="314" height="20" isRemoveLineWhenBlank="true" uuid="a52d5d41-0f02-4f93-bf18-a21543693400"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{full_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="19" y="-5" width="1" height="32" uuid="fa2f5de3-4800-4434-910f-7f590ab21910"/>
+			</line>
+			<line>
+				<reportElement x="530" y="-7" width="1" height="34" uuid="f5c7b4f8-1293-4130-8c95-b99c076a5e1b"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

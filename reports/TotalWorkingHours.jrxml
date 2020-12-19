@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TotalWorkingHours" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac434f5a-fd76-4efc-b727-fa0d271c6660">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM totalworkinghours]]>
+	</queryString>
+	<field name="userid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="full_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="desig" class="java.lang.String"/>
+	<field name="user_level" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="2" width="173" height="33" forecolor="#000066" uuid="6cb3c800-bfb7-4cf5-b960-f8cd3bd02b3c"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CCP UNIVERSITY]]></text>
+			</staticText>
+			<image>
+				<reportElement x="9" y="2" width="61" height="54" uuid="02070291-5cbe-4a59-9c84-41840b80239d"/>
+				<imageExpression><![CDATA["/../../../reports/pics/logo.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="456" y="54" width="99" height="22" uuid="84c7dec5-a194-4888-8a31-a3bbc9933eb4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="411" y="54" width="43" height="20" uuid="e2f32286-3b2f-4396-9f31-7772193b4b10"/>
+				<text><![CDATA[Printed:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="6" width="203" height="20" forecolor="#0F2A45" uuid="808c2959-7d63-488a-977f-e12713e336e8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Working Hours Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="5" width="100" height="20" uuid="235c5b8c-8437-4655-8d21-ab1a8787a5c8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="5" width="117" height="20" uuid="935dd00e-d4a9-4654-b217-b741ed9af66d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Working Hours]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="5" width="100" height="20" uuid="66990d83-865f-4daf-af75-fc6241f05743"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="5" width="100" height="20" uuid="a8cfc2c3-300a-4951-b164-6e46647cd325"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Designation]]></text>
+			</staticText>
+			<line>
+				<reportElement x="21" y="26" width="507" height="1" uuid="50bbef54-bedc-4fbb-943a-e7792b9d71e0"/>
+			</line>
+			<line>
+				<reportElement x="21" y="4" width="507" height="1" uuid="9178b7f3-cdc2-4d00-b90b-c55917b0637d"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="21" y="5" width="100" height="20" uuid="144d17d6-db75-4b44-9a4d-ff7576cc5b54"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="5" width="162" height="20" uuid="62711451-57a4-4e40-8c04-7890f0c46e14"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{full_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="5" width="114" height="20" uuid="a4858eb8-a6d7-4603-bb33-1c2bc7cfcc35"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desig}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="5" width="100" height="20" uuid="204fd38a-f7bc-4b35-97a4-b779c8e07d43"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

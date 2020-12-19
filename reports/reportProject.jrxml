@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportProject" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a142b368-1d67-4d06-9192-3145a58c0fcd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select *
+from projects]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="topic" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="project_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="started_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="completed_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="module" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estimate_time" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="batch" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="userid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="438" y="56" width="117" height="20" uuid="5248e35e-22b3-4d93-a441-fe0c0159c943"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="383" y="55" width="43" height="21" uuid="ac5ca3ea-2dc4-4d98-8b2f-67182cf8f180"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Printed: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="6" width="173" height="33" forecolor="#000066" uuid="4e48d5ee-9d09-48d8-b547-7ba926daa638"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CCP UNIVERSITY]]></text>
+			</staticText>
+			<image>
+				<reportElement x="6" y="6" width="61" height="54" uuid="d07f48f9-0507-488c-8980-8ba9b12f64d5"/>
+				<imageExpression><![CDATA["/../../../reports/pics/logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="232" y="6" width="70" height="24" uuid="7285a0fa-999e-4331-8410-9d1eef2ad1d8"/>
+				<textElement>
+					<font fontName="Calibri" size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Projects]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="70" y="29" width="48" height="32" uuid="2c570504-be1f-4e43-81ea-d0c3e2d52a23"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project Topic]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="30" width="58" height="20" uuid="09ccfb9e-9f6e-4705-961f-78e10a130d6d"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="194" y="29" width="69" height="20" uuid="137fa8b1-8bc0-4de4-a0e2-f451fe36f149"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="29" width="68" height="20" uuid="87e30245-2c70-47e4-a781-b42f618edb6a"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Started Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="29" width="84" height="20" uuid="7730cdb2-d139-4549-af02-92bcaa4e7386"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Completed Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="29" width="42" height="20" uuid="54dd318e-a398-4e3d-ae21-08984d3b7eab"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Module]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="501" y="30" width="31" height="20" uuid="cbe3b89f-1112-40e6-81fb-e619794ae19d"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Batch]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="60" width="592" height="1" uuid="282fcde1-a5b3-437e-9438-78f216a3dd7c"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="30" width="58" height="20" uuid="4547d9b3-7f02-4e70-852c-b68869b5d705"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="71" y="8" width="40" height="20" uuid="d435c5ef-774d-4f20-af58-a8b3d6a0011e"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{topic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="8" width="67" height="20" uuid="0da042f8-154e-4794-abf6-d1afb848141a"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="10" width="81" height="20" uuid="f744841f-f6c9-4173-84ff-a6aaa71cc829"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{project_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="10" width="75" height="20" uuid="89f7d929-7aa4-4263-802c-5b318bd91a3b"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{started_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="10" width="86" height="20" uuid="ccd9b0b8-0ab1-471a-b697-88bd4030f4df"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{completed_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="10" width="51" height="20" uuid="8473541d-0765-4c77-9d10-e4e2b1f284fb"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{module}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="10" width="42" height="20" uuid="143098e2-b0a7-4096-a910-4f52da64cc32"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{batch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="8" width="58" height="20" uuid="776ca38b-7b66-4e49-9f8e-23683edf7387"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Working_hours" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="64b7d0bf-b208-42cd-81ff-fd51dfaa6c56">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="165"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select timetable.*, modules.mod_code, modules.mod_name
+from timetable,modules
+where timetable.module = modules.id]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ddate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="module" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="category" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tot_hours" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="remarks" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="userid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mod_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mod_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="73" y="6" width="173" height="33" forecolor="#000066" uuid="263691ae-3e5e-49b2-b6d6-57fec6bc715f"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CCP UNIVERSITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="53" width="43" height="20" uuid="80b36990-0a63-4dec-b8b5-26fd6ae5a3ef"/>
+				<text><![CDATA[Printed:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="447" y="53" width="99" height="22" uuid="c18ecf62-120d-4dd8-b9c3-40a3376f26c5"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="6" y="6" width="61" height="54" uuid="72a25eca-25c6-46dd-ad12-b66adbb6b589"/>
+				<imageExpression><![CDATA["/../../../reports/pics/logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="194" y="7" width="203" height="20" forecolor="#0F2A45" uuid="559ff9f8-9b2b-404c-8dce-8c70a3b8b1b2"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Working Hours Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="6" width="100" height="20" uuid="f066279c-3eff-4af5-8741-db6ef767d4ea"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="6" width="100" height="20" uuid="ffb7f10c-d9d4-49e7-b939-1e87542b5fee"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Module]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="6" width="74" height="20" uuid="d32aa3ea-37af-4f33-a9c6-81cae8ada642"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="6" width="91" height="20" uuid="7cc6acd8-5f81-4e6a-b713-5fc78078a8b2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Working Hours]]></text>
+			</staticText>
+			<line>
+				<reportElement x="9" y="28" width="537" height="1" uuid="6a1b5e29-3dea-4ee7-b0c7-3dbab3184cf5"/>
+			</line>
+			<line>
+				<reportElement x="9" y="3" width="537" height="1" uuid="1a664a5e-7492-4098-ba07-87d5b11df709"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="4" width="100" height="20" uuid="25a494d7-4bd7-4702-bdfa-23ad6bf26d6f"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ddate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="4" width="75" height="20" uuid="96acbf55-b807-4cff-a102-2a45f9ffa5fb"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mod_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="4" width="149" height="20" uuid="63587663-bade-4a44-9a98-0970528752ed"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mod_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="4" width="100" height="20" uuid="ddd701ef-89c7-4496-9bcb-9d5a85cc439d"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="4" width="72" height="20" uuid="8eb0df3f-5fd9-45a9-bbad-9482cc1f10a5"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tot_hours}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

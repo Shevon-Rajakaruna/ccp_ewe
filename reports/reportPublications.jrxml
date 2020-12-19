@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportPublications" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b5ab06e2-d407-4ef2-a45d-52ea3ddb78c2">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from publications]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="publication_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pub_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pub_version" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="userid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="426" y="54" width="129" height="20" uuid="a065698e-efed-4600-9093-889d785c4e28"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="375" y="55" width="51" height="21" uuid="8d18ae4c-3bed-4ecb-8e53-993af6883f55"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Printed: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="6" width="173" height="33" forecolor="#000066" uuid="26e14cce-ba4c-40f2-a810-cc340461dcfb"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CCP UNIVERSITY]]></text>
+			</staticText>
+			<image>
+				<reportElement x="6" y="6" width="61" height="54" uuid="148b44f3-eb5a-4a75-a80c-7b34d5e9511a"/>
+				<imageExpression><![CDATA["/../../../reports/pics/logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="213" y="4" width="124" height="25" uuid="38a6c37d-2a37-44a7-a39d-753b56ef035e"/>
+				<textElement>
+					<font fontName="Calibri" size="18" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Publications]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="18" y="5" width="105" height="23" uuid="a40fe9de-00d4-4822-a058-713d447956cb"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Publication Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="5" width="107" height="20" uuid="b764ca2f-b011-4233-afa6-4849f8abdac2"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Publication Version]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="5" width="100" height="20" uuid="e3f6db0a-206d-46ed-996f-78426b9634f4"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Publication Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="5" width="100" height="20" uuid="48076567-6394-4e98-b0dc-06e7092a100d"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Publication Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="6" y="34" width="539" height="1" uuid="9bd9c68a-ad0e-418a-b484-010d25781155"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="150" y="6" width="100" height="20" uuid="933c15e5-8335-4fc1-ba46-5903fdee8dbe"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{publication_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="6" width="100" height="20" uuid="0fe126a9-2a88-421d-9f75-5a99b366a43e"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pub_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="6" width="100" height="20" uuid="87a25c86-a36f-4883-80be-1e15c44903da"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pub_version}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="18" y="6" width="105" height="20" uuid="7adcd054-5904-4b12-9ffe-a113ca5497cb"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="26" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
